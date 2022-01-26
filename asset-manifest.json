@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/todo-microsoft/static/css/main.9c829329.css",
+    "main.js": "/todo-microsoft/static/js/main.fdf78304.js",
+    "static/js/787.35774793.chunk.js": "/todo-microsoft/static/js/787.35774793.chunk.js",
+    "static/media/6.jpg": "/todo-microsoft/static/media/6.ea0bf164142e1c468c67.jpg",
+    "static/media/logo.svg": "/todo-microsoft/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/todo-microsoft/index.html",
+    "main.9c829329.css.map": "/todo-microsoft/static/css/main.9c829329.css.map",
+    "main.fdf78304.js.map": "/todo-microsoft/static/js/main.fdf78304.js.map",
+    "787.35774793.chunk.js.map": "/todo-microsoft/static/js/787.35774793.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9c829329.css",
+    "static/js/main.fdf78304.js"
+  ]
+}
