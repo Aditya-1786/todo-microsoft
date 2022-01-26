@@ -1,0 +1,84 @@
+.linkkk {
+  width: 25%;
+  height: 100vh;
+  background-color: rgb(33, 33, 33);
+  cursor: pointer;
+}
+.profile {
+  display: flex;
+  color: white;
+  padding: 0.6rem;
+  cursor: pointer;
+}
+.details {
+  margin-left: 0.8rem;
+}
+.Name {
+  font-weight: bold;
+}
+.mail {
+  font-weight: 100;
+}
+.link-list {
+  /* padding: 0.2rem; */
+}
+.item {
+  display: flex;
+  color: white;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  background: rgb(33, 33, 33);
+  border-radius: 0.2rem;
+  margin-right: 0.4rem;
+  margin-left: 0.4rem;
+}
+.desc {
+  margin-left: 0.5rem;
+  background: none;
+}
+.sun {
+  color: rgb(94, 192, 192);
+  background: none;
+}
+.item:hover {
+  background: rgb(255, 255, 255, 0.2);
+}
+.star {
+  color: pink;
+  background: none;
+}
+.plan {
+  color: rgb(169, 240, 169);
+  background: none;
+}
+.person {
+  color: rgb(116, 191, 214);
+  background: none;
+}
+.home {
+  color: rgb(57, 73, 82);
+  background: none;
+}
+.item:nth-of-type(1):hover {
+  border-left: 0.3rem solid rgb(94, 192, 192);
+}
+.item:nth-of-type(2):hover {
+  border-left: 0.3rem solid pink;
+}
+.item:nth-of-type(3):hover {
+  border-left: 0.3rem solid rgb(169, 240, 169);
+}
+.item:nth-of-type(4):hover {
+  border-left: 0.3rem solid rgb(116, 191, 214);
+}
+.item:nth-of-type(5):hover {
+  border-left: 0.3rem solid rgb(57, 73, 82);
+}
+.item:nth-of-type(2):focus {
+  background: rgb(255, 255, 255, 0.2);
+  border-left: 0.3rem solid pink;
+}
+.item.selected {
+  background: rgb(255, 255, 255, 0.2);
+  border-left: 0.3rem solid pink;
+}

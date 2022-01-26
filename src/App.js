@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-
+import logo from "./logo.svg";
+import "./App.css";
+import NavBar from "./components/NavBar";
+import Links from "./components/Links";
+import Card from "./components/Card";
+import { useState } from "react";
+const taskss = [
+  { description: "Do Laundry", id: "t1", isHover: false, isFav: false },
+  { description: "Do Mopping", id: "t2", isHover: false, isFav: false },
+  { description: "Get Grocery", id: "t3", isHover: false, isFav: false },
+];
 function App() {
+  const [favorite, setFavorite] = useState(false);
+
+  const favoriteHandler = (value) => {
+    setFavorite(value);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="whole">
+      <NavBar></NavBar>
+      <div className="body-container">
+        <Links className="link-cont" onFav={favoriteHandler} />
+        <Card className="card-cont" list={taskss} fav={favorite} />
+      </div>
     </div>
   );
 }
