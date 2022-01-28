@@ -10,22 +10,22 @@ import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 
 const Links = (props) => {
-  const [fav, setFav] = useState(false);
-
   const favHandler = () => {
-    if (fav) setFav(false);
-    else setFav(true);
-    props.onFav(fav);
+    props.setFavorite(!props.fav);
   };
   return (
     <div className="linkkk">
       <div className="profile">
         <Avatar sx={{ bgcolor: "#fba0e3" }} className="avatar">
-          AS
+          {`${props.information.First.toUpperCase().charAt(
+            0
+          )}${props.information.Last.toUpperCase().charAt(0)}`}
         </Avatar>
         <div className="details">
-          <div className="Name">Aditya Singh</div>
-          <div className="mail">aditya@gmail.com</div>
+          <div className="Name">
+            {`${props.information.First} ${props.information.Last}`}
+          </div>
+          <div className="mail">{props.information.Mail}</div>
         </div>
       </div>
 
@@ -34,7 +34,10 @@ const Links = (props) => {
           <WbSunnyOutlinedIcon className="sun"></WbSunnyOutlinedIcon>
           <div className="desc">My Day</div>
         </div>
-        <div className={`item ${fav ? `selected` : ``}`} onClick={favHandler}>
+        <div
+          className={`item ${props.fav ? `selected` : ``}`}
+          onClick={favHandler}
+        >
           <StarBorderIcon className="star" />
           <div className="desc">Important</div>
         </div>

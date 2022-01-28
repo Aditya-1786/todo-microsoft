@@ -4,25 +4,34 @@ import NavBar from "./components/NavBar";
 import Links from "./components/Links";
 import Card from "./components/Card";
 import { useState } from "react";
-const taskss = [
-  { description: "Do Laundry", id: "t1", isHover: false, isFav: false },
-  { description: "Do Mopping", id: "t2", isHover: false, isFav: false },
-  { description: "Get Grocery", id: "t3", isHover: false, isFav: false },
-];
-function App() {
-  const [favorite, setFavorite] = useState(false);
+import DashBoard from "./components/DashBoard";
+import SignUp from "./components/sign in/SignUp";
+import firebase from "firebase";
 
-  const favoriteHandler = (value) => {
-    setFavorite(value);
+function App() {
+  // const [favorite, setFavorite] = useState(false);
+  const [user, setUser] = useState(null);
+  const [taskss, setTaskss] = useState([]);
+
+  // const favoriteHandler = (value) => {
+  //   setFavorite(value);
+  // };
+  // console.log(taskss);
+  const update = (event) => {
+    setUser(event);
   };
 
+  const signUpHandler = (event) => {
+    update(event);
+  };
+  // console.log(user);
   return (
-    <div className="whole">
-      <NavBar></NavBar>
-      <div className="body-container">
-        <Links className="link-cont" onFav={favoriteHandler} />
-        <Card className="card-cont" list={taskss} fav={favorite} />
-      </div>
+    <div>
+      {user === null && <SignUp onSignUp={signUpHandler} />}
+      {user !== null && (
+        <DashBoard className="dash" info={user} list={taskss}></DashBoard>
+      )}
+      ;
     </div>
   );
 }
