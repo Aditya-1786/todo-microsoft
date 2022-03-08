@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./SignUp.css";
 import firebase from "firebase";
+import AuthContext from "../../context/auth-context";
 
 var db = firebase.firestore();
 const docRef = db.collection("data");
-const SignUp = (props) => {
+const SignUp = () => {
+  const context = useContext(AuthContext);
+
   const [fn, setFn] = useState("");
   const [ln, setLn] = useState("");
   const [mail, setMail] = useState("");
@@ -21,7 +24,7 @@ const SignUp = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    props.onSignUp({
+    context.onSignUp({
       First: fn,
       Last: ln,
       Mail: mail,
